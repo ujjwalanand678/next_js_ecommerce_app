@@ -1,14 +1,12 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Volkhov } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const volkhov = Volkhov({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-volkhov",
 });
 
 export const metadata = {
@@ -18,10 +16,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+   <html lang="en" >
+      <body className={volkhov.variable}>
+        <Navbar />
         {children}
       </body>
     </html>
