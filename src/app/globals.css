@@ -11,3 +11,6 @@ body {
   color: var(--foreground);
   font-family: var(--font-volkhov);
 } 
+::-webkit-scrollbar{
+  display: none;
+}

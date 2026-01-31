@@ -40,7 +40,7 @@ export default function Navbar() {
               </button>
             </>
           ) : (
-            <Link href="/login" className="hover:underline">
+            <Link href="/login" className="border rounded-sm px-3 py-2 hover:bg-gray-800 hover:text-white hover:transition-colors cursor-pointer">
               LOGIN
             </Link>
           )}

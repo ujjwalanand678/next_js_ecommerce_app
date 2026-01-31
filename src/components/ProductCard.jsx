@@ -12,7 +12,7 @@ export default function ProductCard({ product }) {
         />
       </div>
 
-      <div className="text-[13px]">
+      <div className="text-[16px]">
         <p className="font-medium leading-snug">
           {product.name}
         </p>

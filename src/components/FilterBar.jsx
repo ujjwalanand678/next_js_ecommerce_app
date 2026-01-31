@@ -7,7 +7,7 @@ export default function FilterBar({
   setSelectedColor,
 }) {
   return (
-    <aside className="bg-[#F8F8F8] space-y-10 ps-14 pr-5 pt-10">
+    <aside className="bg-[#F8F8F8] space-y-10 ps-14 pr-5 pt-10 pb-14">
       <h2 className="text-[30px] font-[400]">Filters</h2>
 
       {/* SIZE */}
