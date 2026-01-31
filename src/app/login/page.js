@@ -35,7 +35,7 @@ export default function LoginPage() {
 
     if (!passwordRegex.test(form.password))
       e.password =
-        "Min 8 chars, 1 number, 1 special character";
+        "Min 8 chars, at least 1 number and 1 special character";
 
     if (!mobileRegex.test(form.mobile))
       e.mobile = "Mobile must be 10 digits";
