@@ -61,7 +61,10 @@ export default function ProductListPage() {
     });
   }, [products, selectedPrice, selectedSize, selectedColor]);
 
-  if (!ready) return <p className="p-10">Loading…</p>;
+  if (!ready) return (<div className="flex items-center justify-center min-h-[calc(100vh-132px)]">
+  <p className="text-lg">Loading...</p>
+</div>
+)
 
   return (
     <div className=" 

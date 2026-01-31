@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 export default function ProductGrid({ products }) {
   if (!products.length) {
     return (
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-gray-500 mx-auto mt-30">
         No products found
       </p>
     );

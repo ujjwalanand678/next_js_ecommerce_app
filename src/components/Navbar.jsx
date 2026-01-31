@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <nav className="h-[132px] bg-[#E1E9EE]">
       <div className=" mx-16 h-full  flex items-center justify-between">
-        <Link href="/">
+        <Link href="/productlist">
         <h1 className="text-[#484848] text-[52px] font-[400] tracking-wide">
           RALPH LAUREN
         </h1>

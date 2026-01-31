@@ -1,12 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { loginUser } from "@/utils/api";
-import { setAuthData } from "@/utils/auth";
+import { getToken, setAuthData } from "@/utils/auth";
 
 export default function LoginPage() {
   const router = useRouter();
+
+  useEffect(() => {
+    const token = getToken();
+    if (token) {
+      router.replace("/productlist");
+    }
+  }, [router]);
 
   const [form, setForm] = useState({
     email: "",
