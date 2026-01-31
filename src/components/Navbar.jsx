@@ -2,17 +2,19 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { BiShoppingBag } from "react-icons/bi";
 import { getUser, clearAuthData } from "@/utils/auth";
 
 export default function Navbar() {
   const router = useRouter();
+  const pathname = usePathname();
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    setUser(getUser());
-  }, []);
+    const userData = getUser();
+    setUser(userData);
+  }, [pathname]);
 
   const handleLogout = () => {
     clearAuthData();

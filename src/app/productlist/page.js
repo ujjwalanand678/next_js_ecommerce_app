@@ -68,7 +68,8 @@ export default function ProductListPage() {
 
   return (
     <div className=" 
-                grid grid-cols-[280px_1fr] gap-12">
+     grid grid-cols-1 
+                lg:grid md:grid-cols-[280px_1fr] lg:gap-12">
 
       <FilterBar
         selectedPrice={selectedPrice}

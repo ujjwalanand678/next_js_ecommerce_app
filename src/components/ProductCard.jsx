@@ -2,18 +2,35 @@ import Image from "next/image";
 
 export default function ProductCard({ product }) {
   return (
-    <div className="space-y-4">
-      <div className="relative w-full h-[420px] bg-[#f2f2f2]">
+    <div className="space-y-3 sm:space-y-4">
+      {/* Image */}
+      <div
+        className="
+          relative
+          w-full
+          h-[280px] sm:h-[340px] lg:h-[420px]
+         
+          overflow-hidden
+        "
+      >
         <Image
           src={product.image_url}
           alt={product.name}
           fill
-          className="object-cover"
+          className="
+            object-contain
+            md:object-fill
+            lg:object-cover
+            transition-transform
+            duration-300
+            hover:scale-105
+          "
         />
       </div>
 
-      <div className="text-[16px]">
-        <p className="font-medium leading-snug">
+      {/* Text */}
+      <div className="text-center lg:text-left text-sm sm:text-base">
+        <p className="font-medium leading-snug line-clamp-2">
           {product.name}
         </p>
 
