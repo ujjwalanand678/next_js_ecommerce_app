@@ -1,30 +1,29 @@
+import Image from "next/image";
+
 export default function ProductCard({ product }) {
   return (
-    <div className="space-y-3">
-      {/* Image */}
-      <div className="relative">
-        <div className="bg-[#eaeaea] h-[360px]" />
-
-        {product.soldOut && (
-          <span className="absolute inset-0 flex items-center justify-center bg-black/30 text-white text-xs tracking-widest">
-            SOLD OUT
-          </span>
-        )}
+    <div className="space-y-4">
+      <div className="relative w-full h-[420px] bg-[#f2f2f2]">
+        <Image
+          src={product.image_url}
+          alt={product.name}
+          fill
+          className="object-cover"
+        />
       </div>
 
-      {/* Info */}
-      <div className="text-sm">
-        <p className="font-medium">
+      <div className="text-[13px]">
+        <p className="font-medium leading-snug">
           {product.name}
         </p>
 
-        <div className="text-gray-700">
+        <div className="mt-1 text-[#2b2b2b]">
           <span className="font-semibold">
             ${product.price}
           </span>
 
           {product.oldPrice && (
-            <span className="line-through text-gray-400 ml-2">
+            <span className="ml-2 line-through text-gray-400">
               ${product.oldPrice}
             </span>
           )}

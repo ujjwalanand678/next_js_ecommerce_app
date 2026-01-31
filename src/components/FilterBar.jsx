@@ -14,7 +14,7 @@ export default function FilterBar({
       <div className="space-y-3">
         <p className="font-medium">Size</p>
         <div className="flex flex-wrap gap-2">
-          {["S", "M", "L", "XL"].map((size) => (
+          {["S", "M", "L", "XL", "XXL"].map((size) => (
             <button
               key={size}
               onClick={() => setSelectedSize(size)}
@@ -30,39 +30,32 @@ export default function FilterBar({
         </div>
       </div>
 
-      {/* COLORS */}
+      {/* COLORS (LOGICAL VALUES ONLY) */}
       <div className="space-y-3">
         <p className="font-medium">Colors</p>
         <div className="grid grid-cols-5 gap-3">
           {[
-            "bg-red-400",
-            "bg-orange-400",
-            "bg-yellow-400",
-            "bg-green-400",
-            "bg-emerald-400",
-            "bg-cyan-400",
-            "bg-blue-400",
-            "bg-indigo-400",
-            "bg-purple-400",
-            "bg-pink-400",
-          ].map((color, i) => (
+            { name: "red", class: "bg-red-400" },
+            { name: "blue", class: "bg-blue-400" },
+            { name: "green", class: "bg-green-400" },
+          ].map((color) => (
             <button
-              key={i}
-              onClick={() => setSelectedColor(color)}
+              key={color.name}
+              onClick={() => setSelectedColor(color.name)}
               className={`h-5 w-5 rounded-full border ${
-                selectedColor === color
+                selectedColor === color.name
                   ? "border-black"
                   : "border-transparent"
-              } ${color}`}
+              } ${color.class}`}
             />
           ))}
         </div>
       </div>
 
-      {/* PRICES */}
+      {/* PRICE */}
       <div className="space-y-2 text-gray-500">
         <p className="font-medium text-[#2b2b2b]">Prices</p>
-        {[50, 100, 150, 200, 400].map((price) => (
+        {[499, 599, 999, 1599, 2599].map((price) => (
           <label key={price} className="flex items-center gap-2">
             <input
               type="radio"
@@ -70,9 +63,66 @@ export default function FilterBar({
               checked={selectedPrice === price}
               onChange={() => setSelectedPrice(price)}
             />
-            ${price === 50 ? "0–50" : `${price - 50}–${price}`}
+            Under ₹{price}
           </label>
         ))}
+      </div>
+
+      {/* CLEAR */}
+      <button
+        onClick={() => {
+          setSelectedPrice(null);
+          setSelectedSize(null);
+          setSelectedColor(null);
+        }}
+        className="text-xs underline"
+      >
+        Clear filters
+      </button>
+     {/* BRANDS */}
+      <div className="space-y-3">
+        <p className="font-medium">Brands</p>
+        <ul className="space-y-2 text-gray-500">
+          <li>Minimog</li>
+          <li>Retrole</li>
+          <li>Brook</li>
+          <li>Learts</li>
+          <li>Vagabond</li>
+          <li>Abby</li>
+        </ul>
+      </div>
+
+      {/* COLLECTIONS */}
+      <div className="space-y-3">
+        <p className="font-medium">Collections</p>
+        <ul className="space-y-2 text-gray-500">
+          <li>All products</li>
+          <li>Best sellers</li>
+          <li>New arrivals</li>
+          <li>Accessories</li>
+        </ul>
+      </div>
+
+      {/* TAGS */}
+      <div className="space-y-3">
+        <p className="font-medium">Tags</p>
+        <div className="flex flex-wrap gap-x-3 gap-y-2 text-[11px] text-gray-500">
+          {[
+            "Fashion",
+            "Hats",
+            "Sandal",
+            "Belt",
+            "Bags",
+            "Snacker",
+            "Denim",
+            "Minimog",
+            "Vagabond",
+            "Sunglasses",
+            "Beachwear",
+          ].map((tag) => (
+            <span key={tag}>{tag}</span>
+          ))}
+        </div>
       </div>
     </aside>
   );

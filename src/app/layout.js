@@ -1,6 +1,7 @@
 import { Volkhov } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const volkhov = Volkhov({
   subsets: ["latin"],
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
       <body className={volkhov.variable}>
         <Navbar />
         {children}
+         <Footer />
       </body>
     </html>
   );
