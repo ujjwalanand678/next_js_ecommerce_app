@@ -64,8 +64,8 @@ export default function ProductListPage() {
   if (!ready) return <p className="p-10">Loading…</p>;
 
   return (
-    <div className="max-w-[1440px] mx-auto px-[60px] py-[48px]
-                grid grid-cols-[280px_1fr] gap-[72px]">
+    <div className=" 
+                grid grid-cols-[280px_1fr] gap-12">
 
       <FilterBar
         selectedPrice={selectedPrice}

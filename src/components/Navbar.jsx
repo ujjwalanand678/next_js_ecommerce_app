@@ -21,20 +21,20 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="h-[90px] bg-[#eaf1f5]">
-      <div className="max-w-[1440px] mx-auto h-full px-10 flex items-center justify-between">
+    <nav className="h-[132px] bg-[#E1E9EE]">
+      <div className=" mx-16 h-full  flex items-center justify-between">
         <Link href="/">
-        <h1 className="font-serif text-[28px] tracking-wide">
+        <h1 className="text-[#484848] text-[52px] font-[400] tracking-wide">
           RALPH LAUREN
         </h1>
         </Link>
-        <div className="flex items-center gap-8 text-sm">
+        <div className="flex items-center gap-8 text-[16px]">
           {user ? (
             <>
-              <span>{user.userName}</span>
+              <span className="border rounded-sm px-3 py-2 ">{user.userName}</span>
               <button
                 onClick={handleLogout}
-                className="hover:underline"
+                className="border rounded-sm px-3 py-2 hover:bg-gray-800 hover:text-white hover:transition-colors cursor-pointer"
               >
                 LOGOUT
               </button>
@@ -44,7 +44,7 @@ export default function Navbar() {
               LOGIN
             </Link>
           )}
-          <BiShoppingBag size={18} />
+          <BiShoppingBag size={20} />
         </div>
       </div>
     </nav>
